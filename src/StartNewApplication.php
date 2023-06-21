@@ -3,15 +3,11 @@ class StartNewApplication {
     private $applicationData;
 
     public function startNewApplication() {
-        $this->applicationData = []; // Ініціалізуємо порожні дані заявки
+        $this->applicationData = []; // Initializing empty application data
     }
 
     public function setApplicationData($data) {
-        $this->applicationData = $data; // Встановлюємо дані заявки
+        $this->applicationData = $data; // Setting application data
     }
-
-    // Інші методи класу...
-
 }
-
 

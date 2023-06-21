@@ -3,18 +3,18 @@ class Lender {
     private $lenders = [];
 
     public function addLender($lenderName, $criteria) {
-        $this->lenders[$lenderName] = $criteria; // Додавання кредитора до системи
+        $this->lenders[$lenderName] = $criteria; // Adding a lender to the system
     }
 
     public function obtainQuotes($applicationData) {
         $quotes = [];
 
         foreach ($this->lenders as $lenderName => $criteria) {
-            // Застосовуємо критерії, специфічні для кредитора, щоб визначити, чи прийме кредитор заявку
+            // Applying lender-specific criteria to determine if the lender will accept the application
             if ($this->isApplicationAccepted($applicationData, $criteria)) {
-                // Отримуємо пропозицію від кредитора на основі даних заявки
+                // Getting a quote from the lender based on the application data
                 $quote = $this->getQuoteFromLender($applicationData, $lenderName);
-                $quotes[$lenderName] = $quote; // Зберігаємо пропозицію
+                $quotes[$lenderName] = $quote; // Saving the quote
             }
         }
 
@@ -22,15 +22,16 @@ class Lender {
     }
 
     private function isApplicationAccepted($applicationData, $criteria) {
-        // Реалізуйте логіку валідації заявки відповідно до критеріїв кредитора
-        // Поверніть true, якщо заявка приймається, або false, якщо заявка відхиляється
+        // Implement the application validation logic based on the lender's criteria
+        // Return true if the application is accepted, or false if the application is rejected
     }
 
     private function getQuoteFromLender($applicationData, $lenderName) {
-        // Реалізуйте код для отримання пропозиції від кредитора на основі даних заявки
-        // Використовуйте $applicationData та $lenderName для взаємодії з кредитором
+        // Implement the code to obtain a quote from the lender based on the application data
+        // Use $applicationData and $lenderName to interact with the lender
     }
 
 }
+
 
 

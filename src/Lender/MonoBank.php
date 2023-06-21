@@ -1,21 +1,20 @@
 <?php
-
 class MonoBank {
-    // Тіло класу MonoBank
+    // Class body of MonoBank
 }
 
-// Створення об'єкту Lender
+// Creating a Lender object
 $lender = new Lender();
 
-// Додавання кредитора MonoBank
+// Adding MonoBank as a lender
 $lender->addLender('MonoBank', [
     'minCreditScore' => 2000,
     'minIncome' => 10000,
     'allowedLoanPurposes' => ['Home Improvement', 'Debt Consolidation'],
 ], function ($applicationData) {
-    // Логіка отримання пропозиції від кредитора MonoBank на основі даних заявки $applicationData
-    // Поверніть пропозицію кредитора у відповідному форматі
-    // Наприклад:
+    // Logic to receive an offer from MonoBank based on the application data $applicationData
+    // Return the lender's offer in the appropriate format
+    // For example:
     return [
         'interestRate' => 5.2,
         'loanAmount' => 10000,
@@ -23,15 +22,15 @@ $lender->addLender('MonoBank', [
     ];
 });
 
-// Отримання пропозицій від кредиторів на основі даних заявки
-$applicationData = []; // Дані заявки
+// Obtaining quotes from lenders based on application data
+$applicationData = []; // Application data
 $quotes = $lender->obtainQuotes($applicationData);
 
-// Виведення пропозицій
+// Displaying the quotes
 foreach ($quotes as $lenderName => $quote) {
-    echo "Пропозиція від $lenderName: ";
-    echo "Процентна ставка: " . $quote['interestRate'] . "%, ";
-    echo "Сума кредиту: " . $quote['loanAmount'] . ", ";
-    echo "Термін: " . $quote['term'] . " місяців";
+    echo "Offer from $lenderName: ";
+    echo "Interest Rate: " . $quote['interestRate'] . "%, ";
+    echo "Loan Amount: " . $quote['loanAmount'] . ", ";
+    echo "Term: " . $quote['term'] . " months";
     echo "<br>";
 }
