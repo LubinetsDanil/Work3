@@ -1,0 +1,15 @@
+{
+    "name": "danil/work2",
+    "autoload": {
+        "psr-4": {
+            "Danil\\Work2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "melubinets",
+            "email": "105603749+LubinetsDanil@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
